@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Diary 💜</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to right, #ff9a9e, #c471ed);
+    }
+
+    .container {
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
+      width: 350px;
+      text-align: center;
+      box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
+    }
+
+    input, textarea {
+      width: 90%;
+      margin: 8px;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+    }
+
+    button {
+      background: #c471ed;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 95%;
+      margin-top: 5px;
+    }
+
+    button:hover { background: #a85ad4; }
+
+    textarea { height: 70px; }
+
+    .card {
+      background: #f3e6ff;
+      padding: 10px;
+      margin: 8px;
+      border-radius: 10px;
+    }
+
+    ul { list-style: none; padding: 0; }
+
+    li {
+      background: #ffe6ff;
+      margin: 5px;
+      padding: 8px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- LOGIN -->
+  <div id="login-box">
+    <h2>My Diary 💖</h2>
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <button onclick="signup()">Signup</button>
+  </div>
+
+  <!-- APP -->
+  <div id="app" style="display:none;">
+    <h2>Welcome 💜</h2>
+
+    <button onclick="logout()">Logout</button>
+
+    <!-- Journal -->
+    <textarea id="journal" placeholder="Write your thoughts..."></textarea>
+    <button onclick="saveEntry()">Save Entry</button>
+
+    <h3>Your Entries 💖</h3>
+    <div id="entries"></div>
+
+    <!-- Todo -->
+    <h3>To-Do List</h3>
+    <input type="text" id="todoInput" placeholder="Add task">
+    <button onclick="addTodo()">Add Task</button>
+
+    <ul id="todoList"></ul>
+
+  </div>
+
+</div>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore-compat.js"></script>
+
+<script src="app.js"></script>
+
+</body>
+</html>
